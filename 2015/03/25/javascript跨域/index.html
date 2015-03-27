@@ -3,17 +3,29 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Littlewords</title>
+  <title>javascript跨域 | Littlewords</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description" content="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Littlewords">
-<meta property="og:url" content="http://littlewords.github.io/index.html">
+  <meta name="description" content="1.什么是跨域要理解跨域首先要知道javascript语言安全限制中的同源策略。同源策略是指一段脚本只能读取来自同一来源的窗口和文档的属性,即
+
+主机号+协议+端口必须匹配
+
+例如URL说明是否允许通信          http://www.a.com/a.jshttp://www.a.com/b.js同一域名下允许http://www.a.com/lab/a.jshttp://www.a.co">
+<meta property="og:type" content="article">
+<meta property="og:title" content="javascript跨域">
+<meta property="og:url" content="http://littlewords.github.io/2015/03/25/javascript跨域/index.html">
 <meta property="og:site_name" content="Littlewords">
-<meta property="og:description" content="description">
+<meta property="og:description" content="1.什么是跨域要理解跨域首先要知道javascript语言安全限制中的同源策略。同源策略是指一段脚本只能读取来自同一来源的窗口和文档的属性,即
+
+主机号+协议+端口必须匹配
+
+例如URL说明是否允许通信          http://www.a.com/a.jshttp://www.a.com/b.js同一域名下允许http://www.a.com/lab/a.jshttp://www.a.co">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Littlewords">
-<meta name="twitter:description" content="description">
+<meta name="twitter:title" content="javascript跨域">
+<meta name="twitter:description" content="1.什么是跨域要理解跨域首先要知道javascript语言安全限制中的同源策略。同源策略是指一段脚本只能读取来自同一来源的窗口和文档的属性,即
+
+主机号+协议+端口必须匹配
+
+例如URL说明是否允许通信          http://www.a.com/a.jshttp://www.a.com/b.js同一域名下允许http://www.a.com/lab/a.jshttp://www.a.co">
   
     <link rel="alternative" href="/atom.xml" title="Littlewords" type="application/atom+xml">
   
@@ -61,9 +73,7 @@
   </div>
 </div>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-javascript跨域" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-javascript跨域" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/25/javascript跨域/" class="article-date">
   <time datetime="2015-03-25T13:36:04.000Z" itemprop="datePublished">2015-03-25</time>
@@ -80,8 +90,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/25/javascript跨域/">javascript跨域</a>
+    <h1 class="article-title" itemprop="name">
+      javascript跨域
     </h1>
   
 
@@ -111,54 +121,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-杂乱笔记" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/03/24/杂乱笔记/" class="article-date">
-  <time datetime="2015-03-24T15:14:25.000Z" itemprop="datePublished">2015-03-24</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/03/24/杂乱笔记/">杂乱的笔记(1)</a>
-    </h1>
+    <a href="/2015/03/24/杂乱笔记/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">杂乱的笔记(1)</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>有这样一种写法<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(context === <span class="keyword">void</span> <span class="number">0</span>) <span class="keyword">return</span> func;</span><br></pre></td></tr></table></figure></p>
-<p>void是javascript中的一个函数，接受一个参数返回值永远都是undefined。可以说，使用void的目的就是为了得到javascript中的undefined。<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">void</span> <span class="number">0</span></span><br><span class="line"><span class="keyword">void</span> (<span class="number">0</span>)</span><br><span class="line"><span class="keyword">void</span> hello</span><br><span class="line"><span class="keyword">void</span> (<span class="keyword">new</span> <span class="built_in">Date</span>())</span><br></pre></td></tr></table></figure></p>
-<p>以上都讲返回undefined,那么为什么不直接使用undefined<br>undefined并不是javascript的保留字，在一些环境下可以被赋值，这样就不能安全的得到undefined的值，例如<br><figure class="highlight coffeescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="reserved">var</span> <span class="literal">undefined</span> = <span class="number">100</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="literal">undefined</span>);</span><br></pre></td></tr></table></figure></p>
-<h4 id="!!的作用">!!的作用</h4><p>在javascript中，!null和!undefined都会产生TRUE的结果，所以!!就相当于取布尔值<br><figure class="highlight erlang-repl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span><span class="function_or_atom">null</span>;//返回<span class="function_or_atom">false</span></span><br><span class="line"><span class="exclamation_mark">!</span><span class="exclamation_mark">!</span><span class="string">"2"</span>;//返回<span class="variable">TRUE</span></span><br></pre></td></tr></table></figure></p>
-<p>arr.slice()<br>可以说实现对一个数组的拷贝，不错的技巧</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7ospjln000174iqdmhvee2t" class="article-share-link">Share</a>
-      
-      
-  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
-
-    </footer>
-  </div>
   
 </article>
 
-
-  
-  
 </section>
         
           
