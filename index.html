@@ -63,6 +63,50 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-js如何实现静态属性和方法" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/28/js如何实现静态属性和方法/" class="article-date">
+  <time datetime="2015-03-27T17:01:21.000Z" itemprop="datePublished">2015-03-28</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/28/js如何实现静态属性和方法/">javascript实现静态属性</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <p>熟悉java，c++这些变成语言程序员都知道静态属性这一概念。<br>属性和方法是在对象的实例的基础上进行操作的，而静态属性和方法是在类的基础上进行操作的<br>而javascript中没有类的概念，也没有静态属性关键字。想要实现静态变量可以用闭包的方法<br>代码如下<br><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> <span class="constructor"><span class="keyword">constructor</span> = (function()</span>&#123;</span><br><span class="line">	<span class="comment">//静态变量num</span></span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">	<span class="comment">//真正的构造函数</span></span><br><span class="line">	<span class="keyword">var</span> construct =  <span class="function"><span class="keyword">function</span><span class="params">(name,sex,age)</span></span>&#123;</span><br><span class="line">		<span class="comment">//构建作用域安全的对象</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="keyword">this</span> <span class="keyword">instanceof</span> construct)&#123;</span><br><span class="line">			<span class="keyword">this</span>.name = name;</span><br><span class="line">			<span class="keyword">this</span>.sex = sex;</span><br><span class="line">			<span class="keyword">this</span>.age = age;</span><br><span class="line">			<span class="comment">//静态变量加一</span></span><br><span class="line">			num++;</span><br><span class="line">			<span class="keyword">if</span>(num&gt;<span class="number">10</span>)&#123;</span><br><span class="line">				<span class="keyword">throw</span> <span class="keyword">new</span> <span class="built_in">Error</span>(<span class="string">'constructor对象只能被创建10次'</span>)</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="keyword">new</span> construct(name,sex,age);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment">//返回构造函数</span></span><br><span class="line">	<span class="keyword">return</span> construct;</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure></p>
+<p>在上面的代码中，constructor被赋值时，匿名函数执行，返回真正的构造函数。<br>匿名函数中的num变量存在于匿名函数的作用域中，由于真正的构造函数construct也在该作用域中定义。<br>所以每当实例化对象实例时，构造函数能够对匿名函数作用域中的num进行操作，从而达到类似静态变量的效果</p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://littlewords.github.io/2015/03/28/js如何实现静态属性和方法/" data-id="ci7ru67cq000h9ciq9ntuwdf2" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-javascript跨域" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/25/javascript跨域/" class="article-date">
@@ -103,7 +147,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/25/javascript跨域/" data-id="ci7ru3tza0000coiq272xx9l7" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/25/javascript跨域/" data-id="ci7ru676h00009ciqq0ii8cy6" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -150,7 +194,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7ru3u53000bcoiq9q0ovyl3" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7ru67c7000b9ciqx1o1zsew" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/underscore/">underscore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
@@ -172,7 +216,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">2</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span></li></ul>
     </div>
   </div>
 
@@ -182,6 +226,10 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget recents">
       <ul>
+        
+          <li>
+            <a href="/2015/03/28/js如何实现静态属性和方法/">javascript实现静态属性</a>
+          </li>
         
           <li>
             <a href="/2015/03/25/javascript跨域/">javascript跨域</a>
@@ -200,7 +248,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML5/" style="font-size: NaNpx;">HTML5</a><a href="/tags/javascript/" style="font-size: NaNpx;">javascript</a><a href="/tags/jsonp/" style="font-size: NaNpx;">jsonp</a><a href="/tags/underscore/" style="font-size: NaNpx;">underscore</a><a href="/tags/笔记/" style="font-size: NaNpx;">笔记</a><a href="/tags/跨域/" style="font-size: NaNpx;">跨域</a>
+      <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a><a href="/tags/javascript/" style="font-size: 20px;">javascript</a><a href="/tags/jsonp/" style="font-size: 10px;">jsonp</a><a href="/tags/underscore/" style="font-size: 10px;">underscore</a><a href="/tags/笔记/" style="font-size: 20px;">笔记</a><a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
     </div>
   </div>
 
@@ -209,7 +257,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">2</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
     </div>
   </div>
 
