@@ -63,6 +63,112 @@
       <div class="outer">
         <section id="main">
   
+    <article id="post-javascript实现异步的4种方式" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/31/javascript实现异步的4种方式/" class="article-date">
+  <time datetime="2015-03-31T15:50:06.000Z" itemprop="datePublished">2015-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/31/javascript实现异步的4种方式/">javascript异步编程的4种方式</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="前言">前言</h2><p>这是对<a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html简单誊写，作为笔记" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html简单誊写，作为笔记</a><br>想要更详细了解原文的可以访问上面的网址，感谢作者</p>
+<p>javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四种实现方式。</p>
+<h2 id="1-回调">1.回调</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fu<span class="label">nc1</span><span class="comment">()</span>;</span><br><span class="line">fu<span class="label">nc2</span><span class="comment">()</span>;</span><br><span class="line">fu<span class="label">nc3</span><span class="comment">()</span>;</span><br></pre></td></tr></table></figure>
+<p>如上面代码，三个函数将按照顺序执行，func2等待func1执行完毕后执行，func3等待func2执行完毕后执行。这一切都非常的美好，事情有条不紊的进行着…<br>然而当func2是一个耗时操作的时候，这一切似乎变得不那么赏心悦目。func3将苦苦的等候func2试行完毕，但并不需要func2的执行结果。这在很大程度上造成了时间上的浪费。就像是很多人排着队共用一个厕所位，并不需要前一个人在里面产生的结果，而只需要他占用的坑位，偏偏这是一位便秘的仁兄，于是后面的人个个都憋的绿了脸。<br>那么为什么javascript”不在厕所里面多安几个马桶”？当然是为了修的跟别家的厕所不同(请不要喷我，我只是习惯了逗而已)<br>好，上面的问题都不重要，线程虽然只有一条，但是得益于异步编程的方式，在排队秩序上更下功夫也让javascript兵贵神速。我们那些耗时操作写到回调里面去，向下面这样<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span><span class="params">(callBack)</span><span class="comment">&#123;</span><br><span class="line">	setTimeout(callBack,0);</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="title">func1</span><span class="params">(func2)</span>;</span></span><br><span class="line">func3();</span><br></pre></td></tr></table></figure></p>
+<p>这样耗时操作func2将不再阻塞线程，而是被推入延时队列，等待线程空闲的执行。<br>优点：简单、容易理解和部署<br>缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程很混乱</p>
+<h2 id="2-监听">2.监听</h2><p>另一种思路是采用事件驱动模式。任务的执行不取决于代码的顺序，而取决于某个事件是否发生。<br>例如<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">func1.onEvent </span>=<span class="string"> fucn2;</span></span><br></pre></td></tr></table></figure></p>
+<p>这里用了类似浏览器事件的写法，不过事件驱动并不是狭义的浏览器事件，可以将他理解成something happened即一些”有趣的事情”发生了。func2受到已绑定的事件的驱动，当事件被激活的时候执行func2<br>优点:容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，”去耦合”（Decoupling），有利于实现模块化。<br>缺点:流程不清晰</p>
+<h2 id="3-PubSub模式">3.PubSub模式</h2><p>如上面提到的事件驱动，形如<br><figure class="highlight fix"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">func1.onEvent </span>=<span class="string"> func2;</span></span><br></pre></td></tr></table></figure></p>
+<p>一目了然，似乎非常完美，优雅动人并且与其他语言相比别具一格。但当被驱动的函数增加时，一切就变得不那么美好<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">func1.onEvent = <span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">	func2.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">	func3.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">	func4.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">	func5.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
+<p>这不仅冗长重复，而且会制造出浮肿的处理器函数。来看一下发布/订阅模式如何解决问题的。<br>(以node的EventEmitter对象为例)<br>事件订阅过程subscribe：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">emitter.<span class="function"><span class="title">on</span><span class="params">(<span class="string">'somethingIntresting'</span>,func)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>事件发布publish：<br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">emitter.<span class="function"><span class="title">emit</span><span class="params">(<span class="string">'somethingIntresting'</span>)</span></span></span><br></pre></td></tr></table></figure></p>
+<p>emittet.emit发布了前面订阅的事件，从而触发了func的执行。其本质还是事件驱动。但却明显优于后者。<br>他很容易添加处理函数，且完全不用担心处理函数的接踵而至而产生出的踩踏事件。</p>
+<h2 id="4-promise(待续…)">4.promise(待续…)</h2>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://littlewords.github.io/2015/03/31/javascript实现异步的4种方式/" data-id="ci7xocl0f0000ooiqi3fisc4g" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
+    <article id="post-关于setTimeout" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2015/03/31/关于setTimeout/" class="article-date">
+  <time datetime="2015-03-31T14:57:54.000Z" itemprop="datePublished">2015-03-31</time>
+</a>
+    
+  <div class="article-category">
+    <a class="article-category-link" href="/categories/javascript/">javascript</a>
+  </div>
+
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 itemprop="name">
+      <a class="article-title" href="/2015/03/31/关于setTimeout/">关于setTimeout</a>
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <h2 id="1-setTimeout在做什么">1.setTimeout在做什么</h2><p>刚开始学习javascript可能会觉得这是一个十分显而易见的问题，例如这样子的例子：<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;alert(<span class="string">'littlewords'</span>)&#125;,<span class="number">1000</span>);</span><br></pre></td></tr></table></figure></p>
+<p>第一印象也许会是1秒后执行alert(‘littlewords’)，这在大多数情况下结果跟我们的直觉非常相近，但在下面这样的情况将会出现与直觉不符的结果<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line">setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;<span class="built_in">console</span>.log(a)&#125;,<span class="number">0</span>);</span><br><span class="line">a+=<span class="number">1</span>;</span><br></pre></td></tr></table></figure></p>
+<blockquote>
+<p>输出结果：1</p>
+</blockquote>
+<p>what?发生了什么？为什么会是1？<br>要理解上面的输出结果首先要知道setTimeout并不是在n毫秒后执行传入的回调函数。在setTimeout被调用的时候，会有一个延时时间排入队列，然后运行之后的代码。等所有代码运行完毕后，javascript虚拟机才会来照顾一下队列中回调。<br>这样上面代码就很好理解了</p>
+<blockquote>
+<p>1step:声明并初始化变量a=0<br>2step:将回调function(){console.log(a)}推入延时队列<br>3step:a加1<br>4step:执行回调</p>
+</blockquote>
+<p>现在就很容易想清楚为什么下面代码最后的结果为什么会是100了<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">one</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">var</span> i = <span class="number">0</span>; i&lt;<span class="number">10</span>;i++)&#123;</span><br><span class="line">        setTimeout(<span class="function"><span class="keyword">function</span><span class="params">()</span></span>&#123;</span><br><span class="line">            a+=i;</span><br><span class="line">        &#125;,<span class="number">0</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">two</span><span class="params">()</span></span>&#123;</span><br><span class="line">    alert(a);</span><br><span class="line">&#125;</span><br><span class="line">one();</span><br><span class="line">setTimeout(two,<span class="number">0</span>);</span><br></pre></td></tr></table></figure></p>
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://littlewords.github.io/2015/03/31/关于setTimeout/" data-id="ci7xocl58000hooiqotxirdbg" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
+
+    </footer>
+  </div>
+  
+</article>
+
+
+  
     <article id="post-js如何实现静态属性和方法" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/03/28/js如何实现静态属性和方法/" class="article-date">
@@ -95,7 +201,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/28/js如何实现静态属性和方法/" data-id="ci7ru67cq000h9ciq9ntuwdf2" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/28/js如何实现静态属性和方法/" data-id="ci7xocl6k000nooiqrufn385d" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
@@ -147,7 +253,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/25/javascript跨域/" data-id="ci7ru676h00009ciqq0ii8cy6" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/25/javascript跨域/" data-id="ci7xocl6r000rooiqp3as1chd" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -194,7 +300,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7ru67c7000b9ciqx1o1zsew" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7xocl1t000booiq53s27uii" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/underscore/">underscore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
@@ -216,7 +322,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Categories</h3>
     <div class="widget">
-      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">3</span></li></ul>
+      <ul class="category-list"><li class="category-list-item"><a class="category-list-link" href="/categories/javascript/">javascript</a><span class="category-list-count">5</span></li></ul>
     </div>
   </div>
 
@@ -226,6 +332,14 @@
     <h3 class="widget-title">Recents</h3>
     <div class="widget recents">
       <ul>
+        
+          <li>
+            <a href="/2015/03/31/javascript实现异步的4种方式/">javascript异步编程的4种方式</a>
+          </li>
+        
+          <li>
+            <a href="/2015/03/31/关于setTimeout/">关于setTimeout</a>
+          </li>
         
           <li>
             <a href="/2015/03/28/js如何实现静态属性和方法/">javascript实现静态属性</a>
@@ -248,7 +362,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Tag Cloud</h3>
     <div class="widget tagcloud">
-      <a href="/tags/HTML5/" style="font-size: 10px;">HTML5</a><a href="/tags/javascript/" style="font-size: 20px;">javascript</a><a href="/tags/jsonp/" style="font-size: 10px;">jsonp</a><a href="/tags/underscore/" style="font-size: 10px;">underscore</a><a href="/tags/笔记/" style="font-size: 20px;">笔记</a><a href="/tags/跨域/" style="font-size: 10px;">跨域</a>
+      <a href="/tags/HTML5/" style="font-size: 13.33px;">HTML5</a><a href="/tags/javascript/" style="font-size: 20px;">javascript</a><a href="/tags/jsonp/" style="font-size: 13.33px;">jsonp</a><a href="/tags/setTimeout/" style="font-size: 10px;">setTimeout</a><a href="/tags/underscore/" style="font-size: 10px;">underscore</a><a href="/tags/笔记/" style="font-size: 16.67px;">笔记</a><a href="/tags/跨域/" style="font-size: 13.33px;">跨域</a>
     </div>
   </div>
 
@@ -257,7 +371,7 @@
   <div class="widget-wrap">
     <h3 class="widget-title">Archives</h3>
     <div class="widget">
-      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">3</span></li></ul>
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2015/03/">March 2015</a><span class="archive-list-count">5</span></li></ul>
     </div>
   </div>
 
