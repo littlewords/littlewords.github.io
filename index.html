@@ -89,8 +89,7 @@
     
     <div class="article-entry" itemprop="articleBody">
       
-        <h2 id="前言">前言</h2><p>这是对<a href="http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html简单誊写，作为笔记" target="_blank" rel="external">http://www.ruanyifeng.com/blog/2012/12/asynchronous%EF%BC%BFjavascript.html简单誊写，作为笔记</a><br>想要更详细了解原文的可以访问上面的网址，感谢作者</p>
-<p>javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四种实现方式。</p>
+        <h2 id="前言">前言</h2><p>javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四种实现方式。</p>
 <h2 id="1-回调">1.回调</h2><figure class="highlight gcode"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">fu<span class="label">nc1</span><span class="comment">()</span>;</span><br><span class="line">fu<span class="label">nc2</span><span class="comment">()</span>;</span><br><span class="line">fu<span class="label">nc3</span><span class="comment">()</span>;</span><br></pre></td></tr></table></figure>
 <p>如上面代码，三个函数将按照顺序执行，func2等待func1执行完毕后执行，func3等待func2执行完毕后执行。这一切都非常的美好，事情有条不紊的进行着…<br>然而当func2是一个耗时操作的时候，这一切似乎变得不那么赏心悦目。func3将苦苦的等候func2试行完毕，但并不需要func2的执行结果。这在很大程度上造成了时间上的浪费。就像是很多人排着队共用一个厕所位，并不需要前一个人在里面产生的结果，而只需要他占用的坑位，偏偏这是一位便秘的仁兄，于是后面的人个个都憋的绿了脸。<br>那么为什么javascript”不在厕所里面多安几个马桶”？当然是为了修的跟别家的厕所不同(请不要喷我，我只是习惯了逗而已)<br>好，上面的问题都不重要，线程虽然只有一条，但是得益于异步编程的方式，在排队秩序上更下功夫也让javascript兵贵神速。我们那些耗时操作写到回调里面去，向下面这样<br><figure class="highlight delphi"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">func1</span><span class="params">(callBack)</span><span class="comment">&#123;</span><br><span class="line">	setTimeout(callBack,0);</span><br><span class="line">&#125;</span></span><br><span class="line"><span class="title">func1</span><span class="params">(func2)</span>;</span></span><br><span class="line">func3();</span><br></pre></td></tr></table></figure></p>
 <p>这样耗时操作func2将不再阻塞线程，而是被推入延时队列，等待线程空闲的执行。<br>优点：简单、容易理解和部署<br>缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程很混乱</p>
@@ -105,7 +104,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/31/javascript实现异步的4种方式/" data-id="ci7xocl0f0000ooiqi3fisc4g" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/31/javascript实现异步的4种方式/" data-id="ci7xoegnk0000vciq1ib8rwa2" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -157,7 +156,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/31/关于setTimeout/" data-id="ci7xocl58000hooiqotxirdbg" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/31/关于setTimeout/" data-id="ci7xoegpd000hvciq8erlejfy" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/setTimeout/">setTimeout</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
@@ -201,7 +200,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/28/js如何实现静态属性和方法/" data-id="ci7xocl6k000nooiqrufn385d" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/28/js如何实现静态属性和方法/" data-id="ci7xoegpi000nvciq6mlxabb5" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
@@ -253,7 +252,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/25/javascript跨域/" data-id="ci7xocl6r000rooiqp3as1chd" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/25/javascript跨域/" data-id="ci7xoegpl000rvciqreimek84" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/HTML5/">HTML5</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javascript/">javascript</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/jsonp/">jsonp</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/跨域/">跨域</a></li></ul>
@@ -300,7 +299,7 @@
       
     </div>
     <footer class="article-footer">
-      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7xocl1t000booiq53s27uii" class="article-share-link">Share</a>
+      <a data-url="http://littlewords.github.io/2015/03/24/杂乱笔记/" data-id="ci7xoegp8000bvciq5gzmddxt" class="article-share-link">Share</a>
       
       
   <ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/underscore/">underscore</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/笔记/">笔记</a></li></ul>
