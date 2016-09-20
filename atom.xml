@@ -264,15 +264,13 @@
   </entry>
   
   <entry>
-    <title></title>
+    <title>XOR异或运算</title>
     <link href="http://yoursite.com/2016/09/13/xor%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97/"/>
     <id>http://yoursite.com/2016/09/13/xor异或运算/</id>
     <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
+    <updated>2016-09-20T03:24:37.000Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<p>category:算法<br>title:XOR异或运算</p>
-<h2 id="tag-xor"><a href="#tag-xor" class="headerlink" title="tag :xor"></a>tag :xor</h2><h2 id="XOR"><a href="#XOR" class="headerlink" title="XOR"></a>XOR</h2><p>异或是一个数学运算符,用于逻辑运算.异或的数学符号为“⊕”，计算机符号为“xor”。运算规则为:</p>
+    <content type="html"><![CDATA[<h2 id="XOR"><a href="#XOR" class="headerlink" title="XOR"></a>XOR</h2><p>异或是一个数学运算符,用于逻辑运算.异或的数学符号为“⊕”，计算机符号为“xor”。运算规则为:</p>
 <blockquote>
 <p>1^0=1<br>1^1=0<br>0^1=1<br>0^0=0</p>
 </blockquote>
@@ -286,12 +284,16 @@
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;category:算法&lt;br&gt;title:XOR异或运算&lt;/p&gt;
-&lt;h2 id=&quot;tag-xor&quot;&gt;&lt;a href=&quot;#tag-xor&quot; class=&quot;headerlink&quot; title=&quot;tag :xor&quot;&gt;&lt;/a&gt;tag :xor&lt;/h2&gt;&lt;h2 id=&quot;XO
+      &lt;h2 id=&quot;XOR&quot;&gt;&lt;a href=&quot;#XOR&quot; class=&quot;headerlink&quot; title=&quot;XOR&quot;&gt;&lt;/a&gt;XOR&lt;/h2&gt;&lt;p&gt;异或是一个数学运算符,用于逻辑运算.异或的数学符号为“⊕”，计算机符号为“xor”。运算规则为:&lt;/p&gt;
+&lt;blockquote&gt;
+
     
     </summary>
     
+      <category term="算法" scheme="http://yoursite.com/categories/%E7%AE%97%E6%B3%95/"/>
+    
+    
+      <category term="xor" scheme="http://yoursite.com/tags/xor/"/>
     
   </entry>
   
