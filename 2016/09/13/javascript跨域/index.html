@@ -1,0 +1,63 @@
+<!DOCTYPE html><html><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title> javascript跨域 · Hexo</title><meta name="description" content="javascript跨域 - John Doe"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="short icon" href="/favicon.png"><link rel="stylesheet" href="/css/apollo.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Hexo"></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/favicon.png"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="http://weibo.com/sunchongsheng" target="_blank" class="nav-list-link">WEIBO</a></li><li class="nav-list-item"><a href="https://github.com/pinggod" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><section class="container"><div class="post"><article class="post-block"><h1 class="post-title">javascript跨域</h1><div class="post-info">Sep 13, 2016</div><div class="post-content"><h2 id="1-什么是跨域"><a href="#1-什么是跨域" class="headerlink" title="1.什么是跨域"></a>1.什么是跨域</h2><p>要理解跨域首先要知道javascript语言安全限制中的同源策略。同源策略是指一段脚本只能读取来自同一来源的窗口和文档的属性,即</p>
+<blockquote>
+<p>主机号+协议+端口必须匹配</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>URL</th>
+<th style="text-align:center">说明</th>
+<th style="text-align:right">是否允许通信</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a> <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td style="text-align:center">同一域名下</td>
+<td style="text-align:right">允许</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com/lab/a.js" target="_blank" rel="external">http://www.a.com/lab/a.js</a> <a href="http://www.a.com/script/b.js" target="_blank" rel="external">http://www.a.com/script/b.js</a></td>
+<td style="text-align:center">同一域名下不同文件夹</td>
+<td style="text-align:right">允许</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com:8000/a.js" target="_blank" rel="external">http://www.a.com:8000/a.js</a> <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td style="text-align:center">同一域名，不同端口</td>
+<td style="text-align:right">不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a> <a href="https://www.a.com/b.js" target="_blank" rel="external">https://www.a.com/b.js</a></td>
+<td style="text-align:center">同一域名，不同协议</td>
+<td style="text-align:right">不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a> <a href="http://70.32.92.74/b.js" target="_blank" rel="external">http://70.32.92.74/b.js</a></td>
+<td style="text-align:center">域名和域名对应ip</td>
+<td style="text-align:right">不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a> <a href="http://script.a.com/b.js" target="_blank" rel="external">http://script.a.com/b.js</a></td>
+<td style="text-align:center">主域相同，子域不同</td>
+<td style="text-align:right">不允许</td>
+</tr>
+<tr>
+<td><a href="http://www.a.com/a.js" target="_blank" rel="external">http://www.a.com/a.js</a> <a href="http://a.com/b.js" target="_blank" rel="external">http://a.com/b.js</a></td>
+<td style="text-align:center">同一域名，不同二级域名（同上）</td>
+<td style="text-align:right">不允许（cookie这种情况下也不允许访问）</td>
+</tr>
+<tr>
+<td><a href="http://www.cnblogs.com/a.js" target="_blank" rel="external">http://www.cnblogs.com/a.js</a> <a href="http://www.a.com/b.js" target="_blank" rel="external">http://www.a.com/b.js</a></td>
+<td style="text-align:center">不同域名</td>
+<td style="text-align:right">不允许</td>
+</tr>
+</tbody>
+</table>
+<h2 id="2-跨域的实现方式"><a href="#2-跨域的实现方式" class="headerlink" title="2.跨域的实现方式"></a>2.跨域的实现方式</h2><h3 id="1-document-domain-iframe实现跨域"><a href="#1-document-domain-iframe实现跨域" class="headerlink" title="1.document.domain+iframe实现跨域"></a>1.document.domain+iframe实现跨域</h3><p>可以通过设置document.domain的办法来解决。例如在<a href="http://www.a.com/a.html和http://script.a.com/b.html两个文件中都加上document.domain" target="_blank" rel="external">http://www.a.com/a.html和http://script.a.com/b.html两个文件中都加上document.domain</a> = ‘a.com’；然后通过a.html文件中创建一个iframe，去控制iframe的contentDocument，这样就可以实现不同二级域名相同顶级域名下的跨域操作，如果将www.a.com的domain设置成c.com是会报错的。代码如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">document.domain = &apos;a.com&apos;;</div><div class="line">var ifr = document.createElement(&apos;iframe&apos;);</div><div class="line">ifr.src = &apos;http://script.a.com/b.html&apos;;</div><div class="line">ifr.style.display = &apos;none&apos;;</div><div class="line">document.body.appendChild(ifr);</div><div class="line">ifr.onload = function()&#123;</div><div class="line">    var doc = ifr.contentDocument || ifr.contentWindow.document;</div><div class="line">    // 在这里操纵b.html</div><div class="line">    alert(doc.getElementsByTagName(&quot;h1&quot;)[0].childNodes[0].nodeValue);</div><div class="line">&#125;;</div></pre></td></tr></table></figure></p>
+<h3 id="2-动态创建script"><a href="#2-动态创建script" class="headerlink" title="2.动态创建script"></a>2.动态创建script</h3><p>这种方法又被称之为JSONP(JSON with Padding),浏览器禁止了跨域访问，但允许在页面中引入其他域的js文件，这些来自其他域的js文件也能像页面所在域的js文件一样创建函数甚至操作cookie和DOM。以下是通过动态创建script实现跨域的代码：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div></pre></td><td class="code"><pre><div class="line">window.onload = function () &#123;</div><div class="line">	var script = document.createElement(&quot;script&quot;);</div><div class="line">	script.type = &quot;text/javascript&quot;;</div><div class="line">	</div><div class="line">	//返回的字符串不能像单纯的&#123;name:&quot;littlewords&quot;&#125;</div><div class="line">	//而应该像这样的形式  var json = &#123;name:&quot;littlewords&quot;&#125;</div><div class="line">	script.src = &quot;http://otherDomain.com/script.php&quot;;</div><div class="line">	/*</div><div class="line">		//http://otherDomain.com/script.php示例代码</div><div class="line">		&lt;?php</div><div class="line">			echo &quot;var json = &#123;\&quot;name\&quot;:\&quot;littlewords\&quot;&#125;&quot;</div><div class="line">		?&gt;</div><div class="line">	*/</div><div class="line">	</div><div class="line">	var head = document.getElementsByTagName(&quot;head&quot;)[0];</div><div class="line">	head.insertBefore(script, head.firstChild);</div><div class="line">&#125;;</div></pre></td></tr></table></figure>
+<h3 id="3-使用window-name"><a href="#3-使用window-name" class="headerlink" title="3.使用window.name"></a>3.使用window.name</h3><p>在一个窗口(window)的生命周期中，窗口载入的所有页面共享一个window.name,每个页面对window.name都具有读写权利<br>可以通过在<a href="http://domain.com/a.html中将要传递的数据赋值给window.name，再载入http://otherDomain.com/b.hmtl从而实现跨域访问" target="_blank" rel="external">http://domain.com/a.html中将要传递的数据赋值给window.name，再载入http://otherDomain.com/b.hmtl从而实现跨域访问</a></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">//http://domain.com/a.html代码</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	window.name = &quot;需要传递的数据&quot;</div><div class="line">	//1秒后跳转页面</div><div class="line">	setTimeout(function&#123;</div><div class="line">		window.location = &quot;http://otherDomain.com/b.hmtl&quot;</div><div class="line">	&#125;,1000);</div><div class="line">&lt;/script&gt;</div><div class="line"></div><div class="line">//http://otherDomain.com/b.hmtl代码</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">	alert(window.name);</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+<h3 id="4-HTML5激动人心的postMessage"><a href="#4-HTML5激动人心的postMessage" class="headerlink" title="4.HTML5激动人心的postMessage"></a>4.HTML5激动人心的postMessage</h3><p>window.postMessage(message,targetOrigin)方法的第一个参数message为要发送的消息，类型只能为字符串；第二个参数targetOrigin用来限定接收消息的那个window对象所在的域，如果不想限定域，可以使用通配符 * (个人认为尽量不要使用通配符)。<br>需要接收消息的window对象，可是通过监听自身的message事件来获取传过来的消息，消息内容储存在该事件对象的data属性中。<br>下面是代码示例：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div></pre></td><td class="code"><pre><div class="line">//http:domain.com/a.html</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">function callBack()&#123;</div><div class="line">	var ifr = document.getElementById(&apos;iframeb&apos;);</div><div class="line">	var winContent = ifr.contentWindow;</div><div class="line">	winContent.postMessage(&apos;Hello littlewords&apos;,&apos;http:www.domain.com&apos;)</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div><div class="line">&lt;iframe id=&quot;iframeb&quot; src=&quot;http://www.domain.com/b.hmtl onload=&quot;callBack()&quot;&gt;&lt;/iframe&gt;</div><div class="line"></div><div class="line"></div><div class="line">//http:www.domain.com/b.html</div><div class="line">&lt;script type=&quot;text/javascript&quot;&gt;</div><div class="line">window.onmessage = function(e)&#123;</div><div class="line">	e = e||window.event;</div><div class="line">	alert(e.data)//输出结果为 Hello littlewords</div><div class="line">&#125;</div><div class="line">&lt;/script&gt;</div></pre></td></tr></table></figure>
+</div></article></div></section><footer><div class="paginator"><a href="/2016/09/13/https/" class="prev">PREV</a><a href="/2016/09/13/从输入url到看到页面发生了什么？/" class="next">NEXT</a></div><div class="copyright"><p>© 2015 - 2016 <a href="http://yoursite.com">John Doe</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/pinggod/hexo-theme-apollo" target="_blank">hexo-theme-apollo</a>.</p></div></footer></div><script async src="//cdn.bootcss.com/mathjax/2.6.1/MathJax.js?config=TeX-MML-AM_CHTML"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-65933410-1",'auto');ga('send','pageview');</script></body></html>
