@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2016-09-20T02:17:24.000Z</updated>
+  <updated>2016-09-13T05:28:03.000Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -16,90 +16,28 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Hello World</title>
-    <link href="http://yoursite.com/2016/09/20/hello-world/"/>
-    <id>http://yoursite.com/2016/09/20/hello-world/</id>
-    <published>2016-09-20T02:17:24.000Z</published>
-    <updated>2016-09-20T02:17:24.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo new <span class="string">"My New Post"</span></div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo server</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo generate</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">$ hexo deploy</div></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/13/xor%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97/"/>
-    <id>http://yoursite.com/2016/09/13/xor异或运算/</id>
+    <title>从输入url到看到页面发生了什么</title>
+    <link href="http://yoursite.com/2016/09/13/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E7%9C%8B%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
+    <id>http://yoursite.com/2016/09/13/从输入url到看到页面发生了什么？/</id>
     <published>2016-09-13T05:28:03.000Z</published>
     <updated>2016-09-13T05:28:03.000Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<p>category:算法<br>title:XOR异或运算</p>
-<h2 id="tag-xor"><a href="#tag-xor" class="headerlink" title="tag :xor"></a>tag :xor</h2><h2 id="XOR"><a href="#XOR" class="headerlink" title="XOR"></a>XOR</h2><p>异或是一个数学运算符,用于逻辑运算.异或的数学符号为“⊕”，计算机符号为“xor”。运算规则为:</p>
-<blockquote>
-<p>1^0=1<br>1^1=0<br>0^1=1<br>0^0=0</p>
-</blockquote>
-<p>即:相同取0,相异取1.在判断真(1)假(0)时:仅有一个为真(1)时才为真(1).</p>
-<h2 id="异或的用途"><a href="#异或的用途" class="headerlink" title="异或的用途"></a>异或的用途</h2><h5 id="1-在不必使用第三个值-中间变量-的时候-交换两个整数的值"><a href="#1-在不必使用第三个值-中间变量-的时候-交换两个整数的值" class="headerlink" title="1.在不必使用第三个值(中间变量)的时候,交换两个整数的值"></a>1.在不必使用第三个值(中间变量)的时候,交换两个整数的值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var b = 2;</div><div class="line">a = a ^ b;</div><div class="line">b = b ^ a;</div><div class="line">a = a ^ b;//a = 2;b = 1;</div></pre></td></tr></table></figure>
-<h5 id="2-奇偶判断"><a href="#2-奇偶判断" class="headerlink" title="2.奇偶判断"></a>2.奇偶判断</h5><p>题目:一个数组存放若干整数，一个数出现奇数次，其余数均出现偶数次，找出这个出现奇数次的数？</p>
-<p>解法:把所有数异或,偶数次异或为0,奇数次异或为数本身.</p>
-<p>变形题目:1-1000放在含有1001个元素的数组中，只有唯一的一个元素值重复，其它均只出现一次。每个数组元素只能访问一次，设计一个算法，将它找出来；不用辅助存储空间，能否设计一个算法实现？</p>
-<p>解法:把所有数异或后的结果与1-1000异或后的结果异或,得到结果.</p>
-<h5 id="3-内存保护作用"><a href="#3-内存保护作用" class="headerlink" title="3.内存保护作用"></a>3.内存保护作用</h5>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小妹对web的理解还很粗浅，姑且挑战一下这道经典题目</p>
+<h2 id="1-浏览器生成http报文"><a href="#1-浏览器生成http报文" class="headerlink" title="1.浏览器生成http报文"></a>1.浏览器生成http报文</h2><p>当url输入到浏览器地址栏并且按下回车后，浏览器会根据我们输入的url生成一个http报文。<br>例如访问mm.littlewords.cn的时候会生成如下http报文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">GET / HTTP/1.1</div><div class="line">Host: mm.littlewords.cn</div><div class="line">Connection: keep-alive</div><div class="line">Cache-Control: max-age=0</div><div class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line">Upgrade-Insecure-Requests: 1</div><div class="line">User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36</div><div class="line">Accept-Encoding: gzip, deflate, sdch</div><div class="line">Accept-Language: zh-CN,zh;q=0.8</div></pre></td></tr></table></figure></p>
+<h2 id="2-域名解析"><a href="#2-域名解析" class="headerlink" title="2.域名解析"></a>2.域名解析</h2><p>得到这样一个报文之后激动的孩子们当然是想赶紧吧它寄出去。<br><br>但是http协议是建立在传输层协议TCP协议之上的，TCP协议规定传输信息必须先在两台主机之间建立传输管道，<br><br>而建立这个传输管道需要目标主机的IP地址和端口号。<br><br>我们知道再不输入端口号的时候，浏览器会自动访问目的主机的80端口<br><br>那么怎么获得目的主机的IP地址呢？这就要了解一下dns域名解析<br><br><br><br>DNS（Domain Name System）直译就是域名系统的意思，最早互联网诞生的时候，并没有域名这个概念，那个时候都是直接用IP访问。但是IP虽然直接，但是缺点是很难记忆，不利于互联网的普及,于是就发明了DNS。<br><br>DNS是用于管理域名和IP地址映射关系的分布式数据库，DNS使用UDP协议传输数据。</p>
+<h2 id="3-与服务器建立TCP连接"><a href="#3-与服务器建立TCP连接" class="headerlink" title="3.与服务器建立TCP连接"></a>3.与服务器建立TCP连接</h2><h2 id="4-发送请求报文"><a href="#4-发送请求报文" class="headerlink" title="4.发送请求报文"></a>4.发送请求报文</h2><h2 id="5-返回响应报文"><a href="#5-返回响应报文" class="headerlink" title="5.返回响应报文"></a>5.返回响应报文</h2><h2 id="6-关闭连接，渲染页面"><a href="#6-关闭连接，渲染页面" class="headerlink" title="6.关闭连接，渲染页面"></a>6.关闭连接，渲染页面</h2>]]></content>
     
     <summary type="html">
     
-      &lt;hr&gt;
-&lt;p&gt;category:算法&lt;br&gt;title:XOR异或运算&lt;/p&gt;
-&lt;h2 id=&quot;tag-xor&quot;&gt;&lt;a href=&quot;#tag-xor&quot; class=&quot;headerlink&quot; title=&quot;tag :xor&quot;&gt;&lt;/a&gt;tag :xor&lt;/h2&gt;&lt;h2 id=&quot;XO
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;小妹对web的理解还很粗浅，姑且挑战一下这道经典题目&lt;/p&gt;
+&lt;h2 id=&quot;1-浏览器生成http报文&quot;&gt;&lt;a href=&quot;#1-浏览器生
     
     </summary>
     
+      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
     
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/13/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/"/>
-    <id>http://yoursite.com/2016/09/13/动态规划/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
     
-    <content type="html"><![CDATA[<hr>
-<p>title:动态规划<br>tag:算法</p>
-<h2 id="category-算法"><a href="#category-算法" class="headerlink" title="category:算法"></a>category:算法</h2><p>动态规划方法通常用来求解最优化问题，这类问题有很多可行解，每个解都有一个值，需要的最优值的解一般是最大值或最小值。最优解不一定只有一个，可能有几个，因为可能有多个解都达到最优值。<br>设计一个动态规划算法的4个步骤：</p>
-<ul>
-<li>刻画一个最优解的结构特征</li>
-<li>递归的定义最优解的值</li>
-<li>计算最优解的值，通常采用自底向上的方法</li>
-<li>利用计算出的信息构造一个最优解</li>
-</ul>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title:动态规划&lt;br&gt;tag:算法&lt;/p&gt;
-&lt;h2 id=&quot;category-算法&quot;&gt;&lt;a href=&quot;#category-算法&quot; class=&quot;headerlink&quot; title=&quot;category:算法&quot;&gt;&lt;/a&gt;category:算法&lt;/h2&gt;&lt;p&gt;动
-    
-    </summary>
-    
+      <category term="web" scheme="http://yoursite.com/tags/web/"/>
     
   </entry>
   
@@ -136,119 +74,6 @@
       <category term="setTimeout" scheme="http://yoursite.com/tags/setTimeout/"/>
     
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/13/arithmetic/"/>
-    <id>http://yoursite.com/2016/09/13/arithmetic/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>title:arithmetic–排序算法<br>tags:插入排序</p>
-<h2 id="category-javascript"><a href="#category-javascript" class="headerlink" title="category:javascript"></a>category:javascript</h2><h2 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h2><p>前两天去面试，提到时间复杂度，由此再学习一次时间复杂度相关知识，希望有更深入一层的理解。<br>百度百科对时间复杂度的定义:在计算机科学当中，算法的时间复杂度是一个函数，描述了该算法的运行时间。</p>
-<p>算法时间复杂度的定义：在进行算法分析时，语句总的执行次数T(n)是关于问题规模n的函数，进而分析T(n)随n的变化情况确定n的数量级。算法的时间复杂度也就是算法的时间量度，记作：T(n) = O(f(n))。他表示随问题规模n的增大，算法执行时间的增长率和f(n)的增长率相同，称作算法的渐进时间复杂度，简称为时间复杂度。其中f(n)是问题规模n的某个函数。</p>
-<p>那么现在的问题就是确定f(n)的增长率。具体步骤如下：</p>
-<ol>
-<li>用常数1代替所有的常数项</li>
-<li>只保留最高阶项</li>
-<li>如果最高阶项存在且不为1，则去除他的常数倍数</li>
-<li>得到结果</li>
-</ol>
-<p>下面我们就来分析一下排序算法的时间复杂度！</p>
-<h2 id="算法基础–冒泡排序"><a href="#算法基础–冒泡排序" class="headerlink" title="算法基础–冒泡排序"></a>算法基础–冒泡排序</h2><p>冒泡排序对于少量元素的排序是一个有效的算法。冒泡排序是一种交换排序，基本原理是：两两比较相邻记录的关键字，如果反序则交换，直到没有反序的记录为止。</p>
-<h2 id="代码块"><a href="#代码块" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div></pre></td><td class="code"><pre><div class="line">function bubleSort(arr)&#123;</div><div class="line">	for(var i = 0;i &lt; arr.length;i++)&#123;</div><div class="line">		for(var j = i;j &lt; arr.length; j++)&#123;</div><div class="line">			if(i &lt; j)&#123;</div><div class="line">				var temp = arr[i];</div><div class="line">				arr[i] = arr[j];</div><div class="line">				arr[j] = temp;</div><div class="line">		&#125;</div><div class="line">	return arr;    </div><div class="line">&#125;</div><div class="line"></div><div class="line">var arr=[7,4,3,1,2,9,6];</div><div class="line">bubbleSort(arr);   // [9, 7, 6, 4, 3, 2, 1]</div></pre></td></tr></table></figure>
-<p>从以上代码当中可以看出，有两层循环，假定数组的length为n，所以当i = 0时执行n次，当i = 1时，执行n - 1次。以此类推内层执行了n + (n - 1) + (n - 2) +…+ 2 + 1次，可以看出这是一个等差数列，可以用等差数列的求和公式计算，即：n(n + 1)/2或n^2/2 + n/2。由上述的时间复杂度计算步骤可以得到冒泡排序的时间复杂度为：O(n^2)。</p>
-<h2 id="算法基础–快速排序"><a href="#算法基础–快速排序" class="headerlink" title="算法基础–快速排序"></a>算法基础–快速排序</h2><p>快速排序是处理大数据集最快的排序算法之一。快速排序的原理是：通过一趟排序将待排记录分割成独立的两部分，一部分记录的关键字均比另一部分记录的关键字小，则可分别对这两部分记录继续进行排序，以达到整个序列有序的目的。快速排序是冒泡排序的升级，他们都属于选择排序类，是通过不断的比较移动和交换来实现排序的，只不过快速排序的实现，增大了记录的比较和移动的距离，将关键字较大的记录从前面直接移动到后面，将关键字较小的记录从后面直接移动到前面，从而减少了比较的次数和移动交换的次数。</p>
-<h2 id="代码块-1"><a href="#代码块-1" class="headerlink" title="代码块"></a>代码块</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div></pre></td><td class="code"><pre><div class="line">function qSort(arr)&#123;</div><div class="line">	if (arr.length===0)&#123;</div><div class="line">		return arr;</div><div class="line">	&#125;</div><div class="line">	var lesser=[];</div><div class="line">	var greater=[];</div><div class="line">	var pivot=arr[0];</div><div class="line">	for (var i=1;i&lt;arr.length;i++)&#123;</div><div class="line">		if(arr[i]&lt;pivot)&#123;</div><div class="line">			lesser.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">		else&#123;</div><div class="line">			greater.push(arr[i]);</div><div class="line">		&#125;</div><div class="line">	&#125;</div><div class="line">	return qSort(lesser).concat(pivot,qSort(greater));</div><div class="line">&#125;</div><div class="line"></div><div class="line">var arr=[3,9,4,6,2,1,7];</div><div class="line">qSort(arr);       // [1,2,3,4,6,7,9]</div></pre></td></tr></table></figure>
-<p>快速排序的时间复杂度分析：快速排序的时间性能取决于快速排序递归的深度。画出递归树即可看出从第二层开始，节点的个数是2^1、2^2、2^3….依此类推，如果节点上有n个数，则2^x = n,即x = log^n,以2为底。所以从第二层开始的递归次数是log^n;即：快速排序的时间复杂度为log^n,以2为底。<br>由于关键字的比较和交换是跳跃进行的，快速排序是不稳定排序。<br>待更新、、、</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title:arithmetic–排序算法&lt;br&gt;tags:插入排序&lt;/p&gt;
-&lt;h2 id=&quot;category-javascript&quot;&gt;&lt;a href=&quot;#category-javascript&quot; class=&quot;headerlink&quot; title=&quot;categor
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/13/http/"/>
-    <id>http://yoursite.com/2016/09/13/http/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>title:http<br>tag:http相关内容</p>
-<h2 id="category-http"><a href="#category-http" class="headerlink" title="category:http"></a>category:http</h2><p>最近在深入的学习http协议，一边学习一边记录吧！</p>
-<h2 id="MIME"><a href="#MIME" class="headerlink" title="MIME"></a>MIME</h2><p>先来看看什么是MIME吧！HTTP用MIME来描述并标记多媒体内容。当Web浏览器从服务器取得一个资源对象的时候，会查看它的MIME类型（content-type的值）。</p>
-<h2 id="URI和URL"><a href="#URI和URL" class="headerlink" title="URI和URL"></a>URI和URL</h2><p>在看电子书的过程中，才把uri和url的区别搞清楚了。URI是统一资源标识符即服务器资源名称；URL和URN是URI的两种形式，URL是统一资源定位符，是资源标识符最常见的形式，描述了一台特定服务器上某资源的特定位置。现在几乎所有的URI都是URL。URN没有得到大范围使用，就先略去。所以常常我们可以把URI和URL不加区别。</p>
-<h2 id="HTTP方法"><a href="#HTTP方法" class="headerlink" title="HTTP方法"></a>HTTP方法</h2><p>   八种HTTP方法：</p>
-<blockquote>
-<p>GET         从服务器向客户端发送命名资源<br>POST        将客户端数据发送到一个服务器网关应用程序<br>PUT         将来自客户端的数据存储到一个命名的服务器资源中去<br>DELETE      从服务器中删除命名资源<br>HEAD        仅发送命名资源响应中的HTTP首部<br>CONNECT<br>TRACE<br>OPTIONS</p>
-</blockquote>
-<p>常见的面试题目是GET和POST的区别，比较特别的会考GET和PUT的区别，后者一般很少有同学能答出来。</p>
-<h2 id="HTTP状态码"><a href="#HTTP状态码" class="headerlink" title="HTTP状态码"></a>HTTP状态码</h2><p>关于状态码百度一下便能得到想要的答案，就不再赘述，主要说说几个关键的吧：200、301、302、303、404、500。作为一个合格的前端肯定知道这几个的出现场景。每条HTTP响应报文返回时都会携带一个状态码，告诉客户端请求是否成功或者是否需要采取其他行动。</p>
-<h2 id="HTTP报文"><a href="#HTTP报文" class="headerlink" title="HTTP报文"></a>HTTP报文</h2><p>HTTP报文分为请求报文和响应报文，是由一行一行的字符串组成纯文本。报文包含三个部分：  </p>
-<h6 id="起始行"><a href="#起始行" class="headerlink" title="起始行"></a>起始行</h6><p>即第一行， 在请求报文中用来说明要做些什么，在响应报文中说明出现了什么情况。</p>
-<h6 id="首部字段"><a href="#首部字段" class="headerlink" title="首部字段"></a>首部字段</h6><p>位于起始行之后以一个空行结束，每个首部字段包含一个名称和一个值，以：连接</p>
-<h6 id="主体"><a href="#主体" class="headerlink" title="主体"></a>主体</h6><p>空行之后的即是报文主体。请求主体中包含了要发送给服务器的数据，响应主体中包含了要返回给客户端的数据。主体与起始行和首部不同，除了可以包含文本，还可以包含任意的二进制数据（图片、视屏、音频/软件程序等）。</p>
-<h2 id="连接"><a href="#连接" class="headerlink" title="连接"></a>连接</h2><p>报文通过传输控制协议连接从一个地方搬移到另一个地方。网络协议分为7层：应用层、表示层、会话层、传输层、网络层、数据链路层和物理层。HTTP协议属于应用层协议，他把网络通信的细节都交给了通用可靠的因特网传输协议TCP/IP。TCP/IP可以在任意时段以任意尺寸无差错的按序传输数据，影藏了各种网络和硬件的特点及弱点，使各种类型的计算机和网络都能够进行可靠的通信。也就是说，只要建立了TCP连接，客户端与服务器之间的报文交换就不会丢失、不会被破坏、也不会在接收时出现错序。HTTP协议处于TCP协议的上层，HTTP使用TCP来传输其报文数据。</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title:http&lt;br&gt;tag:http相关内容&lt;/p&gt;
-&lt;h2 id=&quot;category-http&quot;&gt;&lt;a href=&quot;#category-http&quot; class=&quot;headerlink&quot; title=&quot;category:http&quot;&gt;&lt;/a&gt;category
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/13/https/"/>
-    <id>http://yoursite.com/2016/09/13/https/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>title:https<br>tag:https</p>
-<h2 id="category-http"><a href="#category-http" class="headerlink" title="category:http"></a>category:http</h2><p>HTTP是明文传输的，也就是说，我们可以从介于发送端到接收端之间的任意节点获取传输内容，这些节点可能是路由、代理等。比如在用户登录时，输入账号和密码，发送HTTP请求，恶意者只需要在代理服务器上做点手脚就可以拿到你的密码（具体是怎么拿到的呢？可做一个示例）。在发送端对密码进行加密是徒劳的，恶意者拿到加密后的账号和密码一样能登陆。所以我们需要安全的HTTP也就是HTTPS。TCP负责传输数据，HTTP负责包装数据。</p>
-<blockquote>
-<p>HTTP –&gt;TCP(明文传输)</p>
-</blockquote>
-<p>HTTPS与HTTP的不同之处在于：在HTTP和TCP之间加了一层加密层协议–TLS/SSL。</p>
-<h2 id="TLS-SSL"><a href="#TLS-SSL" class="headerlink" title="TLS/SSL"></a>TLS/SSL</h2><p>TLS和SSL都是加密套件，负责对HTTP的数据进行加密，TLS是SSL的升级版。之前应用层将数据直接给到TCP进行传输，现在应用层先将数据给到TSL/SSL，待数据加密后再给到TCP。这样数据的传输就相对安全了，即使在中间节点被截获，恶意者也看不懂。</p>
-<h2 id="常见的加密方法"><a href="#常见的加密方法" class="headerlink" title="常见的加密方法"></a>常见的加密方法</h2><h5 id="对称加密"><a href="#对称加密" class="headerlink" title="对称加密"></a>对称加密</h5><p>加密和解密数据用的密钥是一样的。其优势在于加密解密效率高，劣势在于数据发送方和接收方两两之间要协商一个唯一的不可泄露的密钥。</p>
-<h5 id="非对称加密"><a href="#非对称加密" class="headerlink" title="非对称加密"></a>非对称加密</h5><p>加密的密钥与解密的密钥不同，分别为公钥和私钥。加密用的公钥是所有人都可以查到的，而解密用的私钥一般由网站的管理员持有。通过公钥加密的数据只能由私钥解密，反之同理。</p>
-<h2 id="加密过程"><a href="#加密过程" class="headerlink" title="加密过程"></a>加密过程</h2><p>整个的加密过程其实是一个使用非对称加密方法传输对称加密密钥的过程,具体如下：</p>
-<ol>
-<li>用户访问网站，网站把证书给到浏览器（证书当中包含非对称加密的公钥）</li>
-<li>浏览器从证书中拿到网站的公钥</li>
-<li>浏览器生成一个只有自己知道的对称密钥，使用刚刚得到的非对称公钥加密后传输给网站</li>
-<li>网站通过非对称加密的私钥解密，得到对称密钥</li>
-<li>用对称密钥完成之后的通信</li>
-</ol>
-<p>值得注意的是，证书不一定是安全的，可能是伪造或者被篡改过的</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title:https&lt;br&gt;tag:https&lt;/p&gt;
-&lt;h2 id=&quot;category-http&quot;&gt;&lt;a href=&quot;#category-http&quot; class=&quot;headerlink&quot; title=&quot;category:http&quot;&gt;&lt;/a&gt;category:h
-    
-    </summary>
-    
     
   </entry>
   
@@ -343,28 +168,39 @@
   </entry>
   
   <entry>
-    <title>从输入url到看到页面发生了什么</title>
-    <link href="http://yoursite.com/2016/09/13/%E4%BB%8E%E8%BE%93%E5%85%A5url%E5%88%B0%E7%9C%8B%E5%88%B0%E9%A1%B5%E9%9D%A2%E5%8F%91%E7%94%9F%E4%BA%86%E4%BB%80%E4%B9%88%EF%BC%9F/"/>
-    <id>http://yoursite.com/2016/09/13/从输入url到看到页面发生了什么？/</id>
+    <title>javascript异步编程的4种方式</title>
+    <link href="http://yoursite.com/2016/09/13/javascript%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E7%9A%844%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
+    <id>http://yoursite.com/2016/09/13/javascript实现异步的4种方式/</id>
     <published>2016-09-13T05:28:03.000Z</published>
     <updated>2016-09-13T05:28:03.000Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>小妹对web的理解还很粗浅，姑且挑战一下这道经典题目</p>
-<h2 id="1-浏览器生成http报文"><a href="#1-浏览器生成http报文" class="headerlink" title="1.浏览器生成http报文"></a>1.浏览器生成http报文</h2><p>当url输入到浏览器地址栏并且按下回车后，浏览器会根据我们输入的url生成一个http报文。<br>例如访问mm.littlewords.cn的时候会生成如下http报文<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">GET / HTTP/1.1</div><div class="line">Host: mm.littlewords.cn</div><div class="line">Connection: keep-alive</div><div class="line">Cache-Control: max-age=0</div><div class="line">Accept: text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8</div><div class="line">Upgrade-Insecure-Requests: 1</div><div class="line">User-Agent: Mozilla/5.0 (X11; Linux x86_64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.94 Safari/537.36</div><div class="line">Accept-Encoding: gzip, deflate, sdch</div><div class="line">Accept-Language: zh-CN,zh;q=0.8</div></pre></td></tr></table></figure></p>
-<h2 id="2-域名解析"><a href="#2-域名解析" class="headerlink" title="2.域名解析"></a>2.域名解析</h2><p>得到这样一个报文之后激动的孩子们当然是想赶紧吧它寄出去。<br><br>但是http协议是建立在传输层协议TCP协议之上的，TCP协议规定传输信息必须先在两台主机之间建立传输管道，<br><br>而建立这个传输管道需要目标主机的IP地址和端口号。<br><br>我们知道再不输入端口号的时候，浏览器会自动访问目的主机的80端口<br><br>那么怎么获得目的主机的IP地址呢？这就要了解一下dns域名解析<br><br><br><br>DNS（Domain Name System）直译就是域名系统的意思，最早互联网诞生的时候，并没有域名这个概念，那个时候都是直接用IP访问。但是IP虽然直接，但是缺点是很难记忆，不利于互联网的普及,于是就发明了DNS。<br><br>DNS是用于管理域名和IP地址映射关系的分布式数据库，DNS使用UDP协议传输数据。</p>
-<h2 id="3-与服务器建立TCP连接"><a href="#3-与服务器建立TCP连接" class="headerlink" title="3.与服务器建立TCP连接"></a>3.与服务器建立TCP连接</h2><h2 id="4-发送请求报文"><a href="#4-发送请求报文" class="headerlink" title="4.发送请求报文"></a>4.发送请求报文</h2><h2 id="5-返回响应报文"><a href="#5-返回响应报文" class="headerlink" title="5.返回响应报文"></a>5.返回响应报文</h2><h2 id="6-关闭连接，渲染页面"><a href="#6-关闭连接，渲染页面" class="headerlink" title="6.关闭连接，渲染页面"></a>6.关闭连接，渲染页面</h2>]]></content>
+    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四种实现方式。</p>
+<h2 id="1-回调"><a href="#1-回调" class="headerlink" title="1.回调"></a>1.回调</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">func1();</div><div class="line">func2();</div><div class="line">func3();</div></pre></td></tr></table></figure>
+<p>如上面代码，三个函数将按照顺序执行，func2等待func1执行完毕后执行，func3等待func2执行完毕后执行。这一切都非常的美好，事情有条不紊的进行着…<br>然而当func2是一个耗时操作的时候，这一切似乎变得不那么赏心悦目。func3将苦苦的等候func2试行完毕，但并不需要func2的执行结果。这在很大程度上造成了时间上的浪费。就像是很多人排着队共用一个厕所位，并不需要前一个人在里面产生的结果，而只需要他占用的坑位，偏偏这是一位便秘的仁兄，于是后面的人个个都憋的绿了脸。<br>那么为什么javascript”不在厕所里面多安几个马桶”？当然是为了修的跟别家的厕所不同(请不要喷我，我只是习惯了逗而已)<br>好，上面的问题都不重要，线程虽然只有一条，但是得益于异步编程的方式，在排队秩序上更下功夫也让javascript兵贵神速。我们那些耗时操作写到回调里面去，向下面这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function func1(callBack)&#123;</div><div class="line">	setTimeout(callBack,0);</div><div class="line">&#125;</div><div class="line">func1(func2);</div><div class="line">func3();</div></pre></td></tr></table></figure></p>
+<p>这样耗时操作func2将不再阻塞线程，而是被推入延时队列，等待线程空闲的执行。<br>优点：简单、容易理解和部署<br>缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程很混乱</p>
+<h2 id="2-监听"><a href="#2-监听" class="headerlink" title="2.监听"></a>2.监听</h2><p>另一种思路是采用事件驱动模式。任务的执行不取决于代码的顺序，而取决于某个事件是否发生。<br>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func1.onEvent = fucn2;</div></pre></td></tr></table></figure></p>
+<p>这里用了类似浏览器事件的写法，不过事件驱动并不是狭义的浏览器事件，可以将他理解成something happened即一些”有趣的事情”发生了。func2受到已绑定的事件的驱动，当事件被激活的时候执行func2<br>优点:容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，”去耦合”（Decoupling），有利于实现模块化。<br>缺点:流程不清晰</p>
+<h2 id="3-PubSub模式"><a href="#3-PubSub模式" class="headerlink" title="3.PubSub模式"></a>3.PubSub模式</h2><p>如上面提到的事件驱动，形如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func1.onEvent = func2;</div></pre></td></tr></table></figure></p>
+<p>一目了然，似乎非常完美，优雅动人并且与其他语言相比别具一格。但当被驱动的函数增加时，一切就变得不那么美好<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func1.onEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	func2.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">	func3.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">	func4.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">	func5.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这不仅冗长重复，而且会制造出浮肿的处理器函数。来看一下发布/订阅模式如何解决问题的。<br>(以node的EventEmitter对象为例)<br>事件订阅过程subscribe：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter.on(&apos;somethingIntresting&apos;,func)</div></pre></td></tr></table></figure></p>
+<p>事件发布publish：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter.emit(&apos;somethingIntresting&apos;)</div></pre></td></tr></table></figure></p>
+<p>emittet.emit发布了前面订阅的事件，从而触发了func的执行。其本质还是事件驱动。但却明显优于后者。<br>他很容易添加处理函数，且完全不用担心处理函数的接踵而至而产生出的踩踏事件。</p>
+<h2 id="4-promise-待续…"><a href="#4-promise-待续…" class="headerlink" title="4.promise(待续…)"></a>4.promise(待续…)</h2>]]></content>
     
     <summary type="html">
     
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;小妹对web的理解还很粗浅，姑且挑战一下这道经典题目&lt;/p&gt;
-&lt;h2 id=&quot;1-浏览器生成http报文&quot;&gt;&lt;a href=&quot;#1-浏览器生
+      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四
     
     </summary>
     
       <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
     
     
-      <category term="web" scheme="http://yoursite.com/tags/web/"/>
+      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
+    
+      <category term="异步" scheme="http://yoursite.com/tags/%E5%BC%82%E6%AD%A5/"/>
+    
+      <category term="pubsub" scheme="http://yoursite.com/tags/pubsub/"/>
     
   </entry>
   
@@ -391,29 +227,6 @@
       <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
     
       <category term="笔记" scheme="http://yoursite.com/tags/%E7%AC%94%E8%AE%B0/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>node.js</title>
-    <link href="http://yoursite.com/2016/09/13/node/"/>
-    <id>http://yoursite.com/2016/09/13/node/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="Node-js不是js应用，而是js运行平台"><a href="#Node-js不是js应用，而是js运行平台" class="headerlink" title="Node.js不是js应用，而是js运行平台"></a>Node.js不是js应用，而是js运行平台</h2><p>node.js是一个javascript的运行环境，采用C++语言编写而成。node.js是一个后端的javascript运行环境，也就是说我们可以编写系统级的或者服务器端的javascript代码，交给node.js来执行。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">#node maomao.js</div></pre></td></tr></table></figure></p>
-<p>node采用了Google Chroom 浏览器的V8引擎，性能好且提供了很多系统级的API，比如文件操作、网络编程。</p>
-<h2 id="Node-js采用事件驱动、异步编程，为网络服务而设计"><a href="#Node-js采用事件驱动、异步编程，为网络服务而设计" class="headerlink" title="Node.js采用事件驱动、异步编程，为网络服务而设计"></a>Node.js采用事件驱动、异步编程，为网络服务而设计</h2><p>Node.js的设计思想是以事件为核心，采用异步的风格。开发人员可以根据自己的业务逻辑注册相应的回调函数，这些函数都是异步执行的，虽然是依次注册，但是是由相应的事件触发。其优势在于充分利用了系统资源，执行代码无需阻塞等待某种操作完成。Node.js拥有HTTP、DNS、NET、UDP、HTTPS、TLS等网络模块，可用于快速构建Web服务器。</p>
-<h2 id="起服务的一个简单例子"><a href="#起服务的一个简单例子" class="headerlink" title="起服务的一个简单例子"></a>起服务的一个简单例子</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;Node-js不是js应用，而是js运行平台&quot;&gt;&lt;a href=&quot;#Node-js不是js应用，而是js运行平台&quot; class=&quot;headerlink&quot; title=&quot;Node.js不是js应用，而是js运行平台&quot;&gt;&lt;/a&gt;Node.js不是js应用，而是js运行
-    
-    </summary>
-    
-      <category term="Node" scheme="http://yoursite.com/categories/Node/"/>
-    
     
   </entry>
   
@@ -452,135 +265,33 @@
   
   <entry>
     <title></title>
-    <link href="http://yoursite.com/2016/09/13/photoshop%E5%AE%89%E8%A3%85%E6%96%B9%E6%B3%95/"/>
-    <id>http://yoursite.com/2016/09/13/photoshop安装方法/</id>
+    <link href="http://yoursite.com/2016/09/13/xor%E5%BC%82%E6%88%96%E8%BF%90%E7%AE%97/"/>
+    <id>http://yoursite.com/2016/09/13/xor异或运算/</id>
     <published>2016-09-13T05:28:03.000Z</published>
     <updated>2016-09-13T05:28:03.000Z</updated>
     
     <content type="html"><![CDATA[<hr>
-<p>category:photoshop<br>title:photoshop cs5/cs6 安装方法</p>
-<h2 id="tag-photoshop安装"><a href="#tag-photoshop安装" class="headerlink" title="tag:photoshop安装"></a>tag:photoshop安装</h2><h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>通常情况下,我们都希望安装不收费的ps软件,但是网上提供的安装破解版的ps的方法,如今似乎已经不能再用了,(弱弱的说一句,猫猫就没有安装成功,粘贴到的序列号也不对,喵~),所以喵喵在经历了几次在各种电脑上安装ps的痛苦之后,决心要将自己的经验总结下来,让需要的人能够方便的使用,不要再摸不着头脑了.</p>
-<h2 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h2><p>在百度一下输入框里面输入 photoshop 回车,选择Adobe PhotoShop CS6最新官方版下载 百度软件中心,点击普通下载,(注意不要选择默认的高速下载,否则你会发现你的电脑上莫名其妙的又多了好多百度的产品,此按钮是捆绑下载),然后安心的等待下载完成.</p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p>当下载完成之后,选择在文件夹打开,将下载的文件剪切到你想要安装的路径下,双击exe文件.待所有的文件都加载好了,选择你的电脑适合的和你想要安装的ps,双击进入文件夹,找到photoshop.exe应用程序文件双击,接着会出现安装界面</p>
-<p>##最重要的部分来了<br>断开你的网络连接,选择试用,然后你就可以按照指引一帆风顺的安装成功了,注意,中途不要恢复网络连接哦!这样做的原因是,photoshop是付费软件,他提供了三个月的试用期,也许你想过试用就够了,但是他的试用是需要adobe的账号登录的,然而你根本没有办法从这里获得一个adobe账号,只要在安装过程中没有网络连接,就不会出现登录界面,所以就可以跨过最××的一步了.</p>
-<h2 id="写在结尾"><a href="#写在结尾" class="headerlink" title="写在结尾"></a>写在结尾</h2><p>如果你成功了,希望你能在评论区,给猫猫留下一句赞赏,猫猫天生爱分享,谢谢!有问题也可以在评论区留言或者给喵喵发邮件,一定会回复的哦!</p>
-]]></content>
+<p>category:算法<br>title:XOR异或运算</p>
+<h2 id="tag-xor"><a href="#tag-xor" class="headerlink" title="tag :xor"></a>tag :xor</h2><h2 id="XOR"><a href="#XOR" class="headerlink" title="XOR"></a>XOR</h2><p>异或是一个数学运算符,用于逻辑运算.异或的数学符号为“⊕”，计算机符号为“xor”。运算规则为:</p>
+<blockquote>
+<p>1^0=1<br>1^1=0<br>0^1=1<br>0^0=0</p>
+</blockquote>
+<p>即:相同取0,相异取1.在判断真(1)假(0)时:仅有一个为真(1)时才为真(1).</p>
+<h2 id="异或的用途"><a href="#异或的用途" class="headerlink" title="异或的用途"></a>异或的用途</h2><h5 id="1-在不必使用第三个值-中间变量-的时候-交换两个整数的值"><a href="#1-在不必使用第三个值-中间变量-的时候-交换两个整数的值" class="headerlink" title="1.在不必使用第三个值(中间变量)的时候,交换两个整数的值"></a>1.在不必使用第三个值(中间变量)的时候,交换两个整数的值</h5><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">var a = 1;</div><div class="line">var b = 2;</div><div class="line">a = a ^ b;</div><div class="line">b = b ^ a;</div><div class="line">a = a ^ b;//a = 2;b = 1;</div></pre></td></tr></table></figure>
+<h5 id="2-奇偶判断"><a href="#2-奇偶判断" class="headerlink" title="2.奇偶判断"></a>2.奇偶判断</h5><p>题目:一个数组存放若干整数，一个数出现奇数次，其余数均出现偶数次，找出这个出现奇数次的数？</p>
+<p>解法:把所有数异或,偶数次异或为0,奇数次异或为数本身.</p>
+<p>变形题目:1-1000放在含有1001个元素的数组中，只有唯一的一个元素值重复，其它均只出现一次。每个数组元素只能访问一次，设计一个算法，将它找出来；不用辅助存储空间，能否设计一个算法实现？</p>
+<p>解法:把所有数异或后的结果与1-1000异或后的结果异或,得到结果.</p>
+<h5 id="3-内存保护作用"><a href="#3-内存保护作用" class="headerlink" title="3.内存保护作用"></a>3.内存保护作用</h5>]]></content>
     
     <summary type="html">
     
       &lt;hr&gt;
-&lt;p&gt;category:photoshop&lt;br&gt;title:photoshop cs5/cs6 安装方法&lt;/p&gt;
-&lt;h2 id=&quot;tag-photoshop安装&quot;&gt;&lt;a href=&quot;#tag-photoshop安装&quot; class=&quot;headerlink&quot; title=
+&lt;p&gt;category:算法&lt;br&gt;title:XOR异或运算&lt;/p&gt;
+&lt;h2 id=&quot;tag-xor&quot;&gt;&lt;a href=&quot;#tag-xor&quot; class=&quot;headerlink&quot; title=&quot;tag :xor&quot;&gt;&lt;/a&gt;tag :xor&lt;/h2&gt;&lt;h2 id=&quot;XO
     
     </summary>
     
-    
-  </entry>
-  
-  <entry>
-    <title>个人简历</title>
-    <link href="http://yoursite.com/2016/09/13/resume/"/>
-    <id>http://yoursite.com/2016/09/13/resume/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前端猫猫"><a href="#前端猫猫" class="headerlink" title="前端猫猫"></a>前端猫猫</h2><p>猫猫于2016年6月28日毕业,现在是一名全心全意的前端猫猫,在一家创业公司上班,每天都在努力工作!</p>
-<h2 id="猫猫最近研究的东东"><a href="#猫猫最近研究的东东" class="headerlink" title="猫猫最近研究的东东"></a>猫猫最近研究的东东</h2><p>如果你也感兴趣,我们可以一起学习讨论哦!</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前端猫猫&quot;&gt;&lt;a href=&quot;#前端猫猫&quot; class=&quot;headerlink&quot; title=&quot;前端猫猫&quot;&gt;&lt;/a&gt;前端猫猫&lt;/h2&gt;&lt;p&gt;猫猫于2016年6月28日毕业,现在是一名全心全意的前端猫猫,在一家创业公司上班,每天都在努力工作!&lt;/p&gt;
-&lt;h2 id=
-    
-    </summary>
-    
-      <category term="resume" scheme="http://yoursite.com/categories/resume/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title></title>
-    <link href="http://yoursite.com/2016/09/13/sensitive/"/>
-    <id>http://yoursite.com/2016/09/13/sensitive/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<hr>
-<p>title:sensitive word<br>tags:sensitive</p>
-<h2 id="category-javascript"><a href="#category-javascript" class="headerlink" title="category:javascript"></a>category:javascript</h2><h2 id="filter-sensitive-word"><a href="#filter-sensitive-word" class="headerlink" title="filter sensitive word"></a>filter sensitive word</h2><p>简单的input为例的敏感词过滤</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div><div class="line">15</div><div class="line">16</div><div class="line">17</div><div class="line">18</div><div class="line">19</div><div class="line">20</div><div class="line">21</div></pre></td><td class="code"><pre><div class="line">&lt;!doctype html&gt;</div><div class="line">&lt;html&gt;</div><div class="line">	&lt;head&gt;</div><div class="line">		&lt;title&gt;&lt;/title&gt;	</div><div class="line">	&lt;/head&gt;</div><div class="line">	&lt;body&gt;</div><div class="line">		&lt;input&gt;</div><div class="line">		&lt;script&gt;</div><div class="line">			var input = document.getElementsByTagName(&quot;input&quot;)[0];</div><div class="line">			console.log(input);</div><div class="line">			var ciku = [&quot;haha&quot;,&quot;hehe&quot;,&quot;heihei&quot;];</div><div class="line">			input.onkeyup = function()&#123;</div><div class="line">				for (var i=0;i&lt;ciku.length;i++)&#123;</div><div class="line">					var reg = new RegExp(ciku[i],&quot;ig&quot;);</div><div class="line">					console.log(reg);</div><div class="line">					input.value = input.value.replace(reg,&quot;*&quot;);</div><div class="line">				&#125;</div><div class="line">			&#125;</div><div class="line">		&lt;/script&gt;</div><div class="line">	&lt;/body&gt;</div><div class="line">&lt;/html&gt;</div></pre></td></tr></table></figure>
-<p>just a little case…</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;hr&gt;
-&lt;p&gt;title:sensitive word&lt;br&gt;tags:sensitive&lt;/p&gt;
-&lt;h2 id=&quot;category-javascript&quot;&gt;&lt;a href=&quot;#category-javascript&quot; class=&quot;headerlink&quot; title=&quot;cat
-    
-    </summary>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>webSocket</title>
-    <link href="http://yoursite.com/2016/09/13/webSocket/"/>
-    <id>http://yoursite.com/2016/09/13/webSocket/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>先说说HTML5吧！HTML5涵盖了Web技术中发生的大量改进和变化，包括了从用于网页的标记到CSS3样式、离线与存储、多媒体、连接性等一切变化。WebSocket正是属于连接性领域。</p>
-<h2 id="初识WebSocket"><a href="#初识WebSocket" class="headerlink" title="初识WebSocket"></a>初识WebSocket</h2><p>WebSocket是一种自然的全双工、双向、单套接字连接。仅通过Web上的一个Socket即可进行通信,是HTML5中最强大的通信功能.它可以减少不必要的网络流量并降低网络延迟.</p>
-]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;先说说HTML5吧！HTML5涵盖了Web技术中发生的大量改进和变化，包括了从用于网页的标记到CSS3样式、离线与存储、多媒体、连接性等一切
-    
-    </summary>
-    
-      <category term="http" scheme="http://yoursite.com/categories/http/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>javascript异步编程的4种方式</title>
-    <link href="http://yoursite.com/2016/09/13/javascript%E5%AE%9E%E7%8E%B0%E5%BC%82%E6%AD%A5%E7%9A%844%E7%A7%8D%E6%96%B9%E5%BC%8F/"/>
-    <id>http://yoursite.com/2016/09/13/javascript实现异步的4种方式/</id>
-    <published>2016-09-13T05:28:03.000Z</published>
-    <updated>2016-09-13T05:28:03.000Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四种实现方式。</p>
-<h2 id="1-回调"><a href="#1-回调" class="headerlink" title="1.回调"></a>1.回调</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">func1();</div><div class="line">func2();</div><div class="line">func3();</div></pre></td></tr></table></figure>
-<p>如上面代码，三个函数将按照顺序执行，func2等待func1执行完毕后执行，func3等待func2执行完毕后执行。这一切都非常的美好，事情有条不紊的进行着…<br>然而当func2是一个耗时操作的时候，这一切似乎变得不那么赏心悦目。func3将苦苦的等候func2试行完毕，但并不需要func2的执行结果。这在很大程度上造成了时间上的浪费。就像是很多人排着队共用一个厕所位，并不需要前一个人在里面产生的结果，而只需要他占用的坑位，偏偏这是一位便秘的仁兄，于是后面的人个个都憋的绿了脸。<br>那么为什么javascript”不在厕所里面多安几个马桶”？当然是为了修的跟别家的厕所不同(请不要喷我，我只是习惯了逗而已)<br>好，上面的问题都不重要，线程虽然只有一条，但是得益于异步编程的方式，在排队秩序上更下功夫也让javascript兵贵神速。我们那些耗时操作写到回调里面去，向下面这样<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">function func1(callBack)&#123;</div><div class="line">	setTimeout(callBack,0);</div><div class="line">&#125;</div><div class="line">func1(func2);</div><div class="line">func3();</div></pre></td></tr></table></figure></p>
-<p>这样耗时操作func2将不再阻塞线程，而是被推入延时队列，等待线程空闲的执行。<br>优点：简单、容易理解和部署<br>缺点：不利于代码的阅读和维护，各个部分之间高度耦合（Coupling），流程很混乱</p>
-<h2 id="2-监听"><a href="#2-监听" class="headerlink" title="2.监听"></a>2.监听</h2><p>另一种思路是采用事件驱动模式。任务的执行不取决于代码的顺序，而取决于某个事件是否发生。<br>例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func1.onEvent = fucn2;</div></pre></td></tr></table></figure></p>
-<p>这里用了类似浏览器事件的写法，不过事件驱动并不是狭义的浏览器事件，可以将他理解成something happened即一些”有趣的事情”发生了。func2受到已绑定的事件的驱动，当事件被激活的时候执行func2<br>优点:容易理解，可以绑定多个事件，每个事件可以指定多个回调函数，”去耦合”（Decoupling），有利于实现模块化。<br>缺点:流程不清晰</p>
-<h2 id="3-PubSub模式"><a href="#3-PubSub模式" class="headerlink" title="3.PubSub模式"></a>3.PubSub模式</h2><p>如上面提到的事件驱动，形如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">func1.onEvent = func2;</div></pre></td></tr></table></figure></p>
-<p>一目了然，似乎非常完美，优雅动人并且与其他语言相比别具一格。但当被驱动的函数增加时，一切就变得不那么美好<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">func1.onEvent = <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</div><div class="line">	func2.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">	func3.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">	func4.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">	func5.apply(<span class="keyword">this</span>,<span class="built_in">arguments</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p>这不仅冗长重复，而且会制造出浮肿的处理器函数。来看一下发布/订阅模式如何解决问题的。<br>(以node的EventEmitter对象为例)<br>事件订阅过程subscribe：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter.on(&apos;somethingIntresting&apos;,func)</div></pre></td></tr></table></figure></p>
-<p>事件发布publish：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">emitter.emit(&apos;somethingIntresting&apos;)</div></pre></td></tr></table></figure></p>
-<p>emittet.emit发布了前面订阅的事件，从而触发了func的执行。其本质还是事件驱动。但却明显优于后者。<br>他很容易添加处理函数，且完全不用担心处理函数的接踵而至而产生出的踩踏事件。</p>
-<h2 id="4-promise-待续…"><a href="#4-promise-待续…" class="headerlink" title="4.promise(待续…)"></a>4.promise(待续…)</h2>]]></content>
-    
-    <summary type="html">
-    
-      &lt;h2 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h2&gt;&lt;p&gt;javascript由于其单线程的特性，需要采用异步编程的方式来解决由于耗时操作阻塞线程导致’白屏死机’等问题。下面我们来看一下异步编程的四
-    
-    </summary>
-    
-      <category term="javascript" scheme="http://yoursite.com/categories/javascript/"/>
-    
-    
-      <category term="javascript" scheme="http://yoursite.com/tags/javascript/"/>
-    
-      <category term="异步" scheme="http://yoursite.com/tags/%E5%BC%82%E6%AD%A5/"/>
-    
-      <category term="pubsub" scheme="http://yoursite.com/tags/pubsub/"/>
     
   </entry>
   
